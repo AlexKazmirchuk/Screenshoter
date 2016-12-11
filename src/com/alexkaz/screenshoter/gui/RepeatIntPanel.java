@@ -11,28 +11,17 @@ import java.awt.*;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
-public class RepeatIntPanel extends JPanel {
+public class RepeatIntPanel extends AbstractPanel {
     private JTextField hours;
     private JLabel hrsLabel;
     private JTextField minutes;
     private JLabel minLabel;
 
-    public RepeatIntPanel() {
-        setParams();
-        initComps();
+    public RepeatIntPanel(int position,String name) {//3. Make screenshot every:
+        super(position,name);
     }
 
-    private void setParams() {
-        setBackground(Color.BLUE);
-        setLocation(10,170);
-        setSize(575,70);
-        setLayout(null);
-        Border blackline = BorderFactory.createLineBorder(Color.black);
-        TitledBorder border = BorderFactory.createTitledBorder(blackline,"3. Make screenshot every:");
-        setBorder(border);
-    }
-
-    private void initComps() {
+    protected void initComps() {
         hours = new JTextField("0");
         ((AbstractDocument) hours.getDocument()).setDocumentFilter(new NumericAndLengthFilter(2));
         hours.setSize(30,20);

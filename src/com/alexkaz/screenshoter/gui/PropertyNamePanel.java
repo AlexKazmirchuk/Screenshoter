@@ -7,7 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PropertyNamePanel extends JPanel {
+public class PropertyNamePanel extends AbstractPanel {
     private JLabel byDateL;
     private JCheckBox checkBox;
     private JLabel orLabel;
@@ -15,22 +15,11 @@ public class PropertyNamePanel extends JPanel {
     private JLabel fileExtLabel;
 
 
-    public PropertyNamePanel() {
-        setParams();
-        addComps();
+    public PropertyNamePanel(int position,String name) {
+        super(position,name);
     }
 
-    private void setParams() {
-        setBackground(Color.YELLOW);
-        setLocation(10,90);
-        setSize(575,70);
-        setLayout(null);
-        Border blackline = BorderFactory.createLineBorder(Color.black);
-        TitledBorder border = BorderFactory.createTitledBorder(blackline,"2. Select file name:");
-        setBorder(border);
-    }
-
-    private void addComps() {
+    protected void initComps() {
 
         byDateL = new JLabel("By date:");
         byDateL.setBorder(BorderFactory.createLineBorder(Color.black));

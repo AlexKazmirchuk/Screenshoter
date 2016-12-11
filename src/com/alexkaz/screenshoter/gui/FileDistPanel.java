@@ -7,27 +7,16 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class FileDistPanel extends JPanel {
+public class FileDistPanel extends AbstractPanel {
     private JLabel folderIcon;
     private JTextField textField;
     private JButton button;
 
-    public FileDistPanel() {
-        setParams();
-        initComps();
+    public FileDistPanel(int position,String name) {
+        super(position,name);
     }
 
-    private void setParams() {
-        setBackground(Color.CYAN);
-        setLocation(10,10);
-        setSize(575,70);
-        setLayout(null);
-        Border blackline = BorderFactory.createLineBorder(Color.black);
-        TitledBorder border = BorderFactory.createTitledBorder(blackline,"1. Choose the file destination:");
-        setBorder(border);
-    }
-
-    private void initComps() {
+    protected void initComps() {
         folderIcon = new JLabel("||");
         folderIcon.setBorder(BorderFactory.createLineBorder(Color.black));
         folderIcon.setSize(20,20);
