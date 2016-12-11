@@ -1,6 +1,8 @@
 package com.alexkaz.screenshoter.gui;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 public class ControllPanel extends JPanel {
@@ -17,18 +19,21 @@ public class ControllPanel extends JPanel {
         setLocation(10,250);
         setSize(575,70);
         setLayout(null);
+        Border blackline = BorderFactory.createLineBorder(Color.black);
+        TitledBorder border = BorderFactory.createTitledBorder(blackline,"4. Launch or stop:");
+        setBorder(border);
     }
 
     private void initComps() {
         start = new JButton("Start");
-        start.setSize(200,50);
-        start.setLocation(100,10);
+        start.setSize(200,40);
+        start.setLocation(100,20);
         add(start);
 
 
         stop = new JButton("Stop");
-        stop.setSize(200,50);
-        stop.setLocation(310,10);
+        stop.setSize(200,40);
+        stop.setLocation(310,20);
         add(stop);
     }
 }
