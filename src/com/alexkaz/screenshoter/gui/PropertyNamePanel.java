@@ -1,4 +1,4 @@
-package com.alexkaz.screenshoter;
+package com.alexkaz.screenshoter.gui;
 
 import javax.swing.*;
 import javax.swing.border.Border;

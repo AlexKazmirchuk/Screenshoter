@@ -1,12 +1,10 @@
-package com.alexkaz.screenshoter;
+package com.alexkaz.screenshoter.gui;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
-import java.awt.*;
 
 public class MainForm extends JFrame {
 
-    MainForm(){
+    public MainForm(){
         super("Screenshoter v1.0");
         setSize(600,395);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
