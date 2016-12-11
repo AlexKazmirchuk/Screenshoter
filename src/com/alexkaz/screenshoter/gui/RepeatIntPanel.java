@@ -1,15 +1,18 @@
 package com.alexkaz.screenshoter.gui;
 
+import com.alexkaz.screenshoter.utils.NumericAndLengthFilter;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
+import javax.swing.text.AbstractDocument;
 import javax.swing.text.NumberFormatter;
 import java.awt.*;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
 public class RepeatIntPanel extends JPanel {
-    private JFormattedTextField hours;
+    private JTextField hours;
     private JLabel hrsLabel;
     private JTextField minutes;
     private JLabel minLabel;
@@ -30,14 +33,8 @@ public class RepeatIntPanel extends JPanel {
     }
 
     private void initComps() {
-        NumberFormat format = NumberFormat.getInstance();
-        NumberFormatter formatter = new NumberFormatter(format);
-        formatter.setValueClass(Integer.class);
-        formatter.setMinimum(0);
-        formatter.setMaximum(99);
-        formatter.setAllowsInvalid(false);
-        formatter.setCommitsOnValidEdit(false);
-        hours = new JFormattedTextField(formatter);
+        hours = new JTextField("0");
+        ((AbstractDocument) hours.getDocument()).setDocumentFilter(new NumericAndLengthFilter(2));
         hours.setSize(30,20);
         hours.setLocation(180,30);
         add(hours);
@@ -49,6 +46,7 @@ public class RepeatIntPanel extends JPanel {
         add(hrsLabel);
 
         minutes = new JTextField("0");
+        ((AbstractDocument) minutes.getDocument()).setDocumentFilter(new NumericAndLengthFilter(2));
         minutes.setSize(30,20);
         minutes.setLocation(280,30);
         add(minutes);
