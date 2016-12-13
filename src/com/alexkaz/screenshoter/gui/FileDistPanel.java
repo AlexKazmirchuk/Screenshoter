@@ -45,4 +45,12 @@ public class FileDistPanel extends AbstractPanel {
         });
         add(button);
     }
+
+    public String getPath(){
+        String result = textField.getText();
+        // TODO
+
+
+        return result;
+    }
 }

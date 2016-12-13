@@ -14,17 +14,18 @@ public class MainForm extends JFrame {
     }
 
     private void addPanels(){
-        FileDistPanel jPanel1 = new FileDistPanel(0,"1. Choose the file destination:");
+        FileDistPanel distPanel = new FileDistPanel(0,"1. Choose the file destination:");
         PropertyNamePanel namePanel = new PropertyNamePanel(1,"2. Select file name:");
         RepeatIntPanel intPanel = new RepeatIntPanel(2,"3. Make screenshot every:");
-        ControllPanel controllPanel = new ControllPanel(3,"4. Launch or stop:");
+        ControlPanel controlPanel = new ControlPanel(3,"4. Launch or stop:");
+        controlPanel.setControlComps(distPanel,namePanel,intPanel);
 
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(null);
-        mainPanel.add(jPanel1);
+        mainPanel.add(distPanel);
         mainPanel.add(namePanel);
         mainPanel.add(intPanel);
-        mainPanel.add(controllPanel);
+        mainPanel.add(controlPanel);
         setContentPane(mainPanel);
     }
 }

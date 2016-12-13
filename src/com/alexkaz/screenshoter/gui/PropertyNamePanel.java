@@ -34,17 +34,7 @@ public class PropertyNamePanel extends AbstractPanel {
         checkBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(checkBox.isSelected()){
-                    byDateL.setEnabled(true);
-                    orLabel.setEnabled(false);
-                    textField.setEnabled(false);
-                    fileExtLabel.setEnabled(false);
-                } else{
-                    byDateL.setEnabled(false);
-                    orLabel.setEnabled(true);
-                    textField.setEnabled(true);
-                    fileExtLabel.setEnabled(true);
-                }
+                switchComponents();
             }
         });
         add(checkBox);
@@ -68,5 +58,25 @@ public class PropertyNamePanel extends AbstractPanel {
         fileExtLabel.setLocation(490,30);
         fileExtLabel.setEnabled(false);
         add(fileExtLabel);
+    }
+
+    @Override
+    public void setEnabled(boolean enabled) {
+        super.setEnabled(enabled);
+        switchComponents();
+    }
+
+    private void switchComponents(){
+        if(checkBox.isSelected()){
+            byDateL.setEnabled(true);
+            orLabel.setEnabled(false);
+            textField.setEnabled(false);
+            fileExtLabel.setEnabled(false);
+        } else{
+            byDateL.setEnabled(false);
+            orLabel.setEnabled(true);
+            textField.setEnabled(true);
+            fileExtLabel.setEnabled(true);
+        }
     }
 }

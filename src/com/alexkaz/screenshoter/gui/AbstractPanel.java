@@ -23,4 +23,12 @@ public abstract class AbstractPanel extends JPanel {
     }
 
     protected abstract void initComps();
+
+    @Override
+    public void setEnabled(boolean enabled) {
+        super.setEnabled(enabled);
+        for (Component c: getComponents()){
+            c.setEnabled(enabled);
+        }
+    }
 }
