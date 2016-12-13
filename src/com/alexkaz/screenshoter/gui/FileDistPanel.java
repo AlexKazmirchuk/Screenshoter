@@ -24,13 +24,13 @@ public class FileDistPanel extends AbstractPanel {
         add(folderIcon);
 
         textField = new JTextField("C:\\Users\\sasha\\Documents");
-        textField.setSize(370,20);
+        textField.setSize(230,20);
         textField.setLocation(40,30);
         add(textField);
 
         button = new JButton("Change directory");
         button.setSize(140,20);
-        button.setLocation(420,30);
+        button.setLocation(280,30);
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

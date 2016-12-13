@@ -1,12 +1,13 @@
 package com.alexkaz.screenshoter.gui;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class MainForm extends JFrame {
 
     public MainForm(){
         super("Screenshoter v1.0");
-        setSize(600,360);
+        setSize(460,360);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         addPanels();
@@ -26,6 +27,7 @@ public class MainForm extends JFrame {
         mainPanel.add(namePanel);
         mainPanel.add(intPanel);
         mainPanel.add(controlPanel);
+        mainPanel.setBackground(Color.GRAY);
         setContentPane(mainPanel);
     }
 }

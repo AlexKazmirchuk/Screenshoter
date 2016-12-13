@@ -14,7 +14,6 @@ public class PropertyNamePanel extends AbstractPanel {
     private JTextField textField;
     private JLabel fileExtLabel;
 
-
     public PropertyNamePanel(int position,String name) {
         super(position,name);
     }
@@ -47,7 +46,7 @@ public class PropertyNamePanel extends AbstractPanel {
         add(orLabel);
 
         textField = new JTextField("screenshoot");
-        textField.setSize(350,20);
+        textField.setSize(210,20);
         textField.setLocation(130,30);
         textField.setEnabled(false);
         add(textField);
@@ -55,7 +54,7 @@ public class PropertyNamePanel extends AbstractPanel {
         fileExtLabel = new JLabel("(count).jpg");
         fileExtLabel.setBorder(BorderFactory.createLineBorder(Color.black));
         fileExtLabel.setSize(70,20);
-        fileExtLabel.setLocation(490,30);
+        fileExtLabel.setLocation(350,30);
         fileExtLabel.setEnabled(false);
         add(fileExtLabel);
     }

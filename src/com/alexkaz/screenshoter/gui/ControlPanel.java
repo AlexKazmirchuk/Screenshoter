@@ -25,8 +25,8 @@ public class ControlPanel extends AbstractPanel {
 
     protected void initComps() {
         start = new JButton("Start");
-        start.setSize(200,40);
-        start.setLocation(100,20);
+        start.setSize(140,40);
+        start.setLocation(70,20);
         start.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -50,8 +50,8 @@ public class ControlPanel extends AbstractPanel {
                 stop.setEnabled(false);
             }
         });
-        stop.setSize(200,40);
-        stop.setLocation(310,20);
+        stop.setSize(140,40);
+        stop.setLocation(230,20);
         stop.setEnabled(false);
         add(stop);
     }

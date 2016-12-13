@@ -15,7 +15,7 @@ public abstract class AbstractPanel extends JPanel {
     protected void setParams(int position, String name) {
         setBackground(Color.LIGHT_GRAY);
         setLocation(10,10 + position*80);
-        setSize(575,70);
+        setSize(435,70);
         setLayout(null);
         Border blackline = BorderFactory.createLineBorder(Color.black);
         TitledBorder border = BorderFactory.createTitledBorder(blackline,name);
