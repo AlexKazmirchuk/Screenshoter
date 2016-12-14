@@ -78,4 +78,21 @@ public class PropertyNamePanel extends AbstractPanel {
             fileExtLabel.setEnabled(true);
         }
     }
+
+    public String getName(){
+        String result;
+        char[] badChars = {'<','>',':','\"','/','\\','|','?','*'};
+        if(checkBox.isSelected()){
+            result = "By date";
+        } else {
+            result = textField.getText();
+            for(int i=0; i<badChars.length; i++){
+                if(result.contains(badChars[i] + "")){
+                    result = "";
+                    break;
+                }
+            }
+        }
+        return result;
+    }
 }

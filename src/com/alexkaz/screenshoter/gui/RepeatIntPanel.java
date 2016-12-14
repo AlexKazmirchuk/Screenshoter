@@ -23,6 +23,7 @@ public class RepeatIntPanel extends AbstractPanel {
 
     protected void initComps() {
         hours = new JTextField("0");
+        hours.setHorizontalAlignment(SwingConstants.CENTER);
         ((AbstractDocument) hours.getDocument()).setDocumentFilter(new NumericAndLengthFilter(2));
         hours.setSize(30,20);
         hours.setLocation(120,30);
@@ -35,6 +36,7 @@ public class RepeatIntPanel extends AbstractPanel {
         add(hrsLabel);
 
         minutes = new JTextField("0");
+        minutes.setHorizontalAlignment(SwingConstants.CENTER);
         ((AbstractDocument) minutes.getDocument()).setDocumentFilter(new NumericAndLengthFilter(2));
         minutes.setSize(30,20);
         minutes.setLocation(200,30);
@@ -45,5 +47,12 @@ public class RepeatIntPanel extends AbstractPanel {
         minLabel.setSize(50,20);
         minLabel.setLocation(235,30);
         add(minLabel);
+    }
+
+    public int getInterval(){
+        int hours = (!this.hours.getText().equals(""))  ?  Integer.parseInt(this.hours.getText())  :  0;
+        int minutes = (!this.minutes.getText().equals(""))  ?  Integer.parseInt(this.minutes.getText())  :  0;
+        int result = hours*1000*60*60 + minutes*1000*60;
+        return result;
     }
 }

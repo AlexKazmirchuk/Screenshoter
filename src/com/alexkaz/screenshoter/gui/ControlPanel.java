@@ -30,8 +30,11 @@ public class ControlPanel extends AbstractPanel {
         start.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                screenshoter = new Screenshoter("D:\\screens",5000,"ddfd");
-                new Thread(screenshoter).start();
+//                screenshoter = new Screenshoter("D:\\screens","ddfd",5000);
+                screenshoter = new Screenshoter(distPanel.getPath()
+                                               ,namePanel.getName()
+                                               ,repeatPanel.getInterval());
+//                new Thread(screenshoter).start();
                 enableGUI(false);
                 start.setEnabled(false);
                 stop.setEnabled(true);

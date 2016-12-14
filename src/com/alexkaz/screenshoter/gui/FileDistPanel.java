@@ -6,6 +6,9 @@ import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.nio.file.Files;
+import java.nio.file.InvalidPathException;
+import java.nio.file.Paths;
 
 public class FileDistPanel extends AbstractPanel {
     private JLabel folderIcon;
@@ -48,9 +51,14 @@ public class FileDistPanel extends AbstractPanel {
 
     public String getPath(){
         String result = textField.getText();
-        // TODO
-
-
-        return result;
+        try {
+            if(Files.isDirectory(Paths.get(result)) && !result.equals("")){
+                return result;
+            } else {
+                return "";
+            }
+        } catch (InvalidPathException e){
+            return "";
+        }
     }
 }

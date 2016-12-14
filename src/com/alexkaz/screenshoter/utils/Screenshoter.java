@@ -13,10 +13,13 @@ public class Screenshoter implements Runnable {
     private boolean flag = true;
     private int count = 0;
 
-    public Screenshoter(String destFolder, int delay, String namePrefix) {
+    public Screenshoter(String destFolder,String namePrefix, int delay) {
         this.destFolder = destFolder;
-        this.delay = delay;
         this.namePrefix = namePrefix;
+        this.delay = delay;
+        System.out.println("path" + destFolder);
+        System.out.println("prefix" + namePrefix);
+        System.out.println("delay " + delay);
     }
 
     @Override
