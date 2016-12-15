@@ -6,8 +6,11 @@ import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class FileDistPanel extends AbstractPanel {
@@ -50,14 +53,16 @@ public class FileDistPanel extends AbstractPanel {
     }
 
     public String getPath(){
-        String result = textField.getText();
         try {
+            String result = Paths.get(textField.getText()).toRealPath().toString();
             if(Files.isDirectory(Paths.get(result)) && !result.equals("")){
                 return result;
             } else {
                 return "";
             }
         } catch (InvalidPathException e){
+            return "";
+        } catch (IOException e) {
             return "";
         }
     }
