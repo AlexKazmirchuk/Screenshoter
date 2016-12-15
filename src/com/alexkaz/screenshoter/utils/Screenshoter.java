@@ -1,6 +1,7 @@
 package com.alexkaz.screenshoter.utils;
 
 import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -17,8 +18,8 @@ public class Screenshoter implements Runnable {
         this.destFolder = destFolder;
         this.namePrefix = namePrefix;
         this.delay = delay;
-        System.out.println("path" + destFolder);
-        System.out.println("prefix" + namePrefix);
+        System.out.println("path " + destFolder);
+        System.out.println("prefix " + namePrefix);
         System.out.println("delay " + delay);
     }
 
@@ -35,6 +36,17 @@ public class Screenshoter implements Runnable {
             } catch (IOException | InterruptedException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    private String selectName(){
+        if (namePrefix.equals("By date")){
+            //TODO naming by date
+
+            return "";
+        } else {
+            // TODO naming be prefix + count
+            return "";
         }
     }
 

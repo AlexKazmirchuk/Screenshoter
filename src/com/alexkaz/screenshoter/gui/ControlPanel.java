@@ -31,13 +31,15 @@ public class ControlPanel extends AbstractPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
 //                screenshoter = new Screenshoter("D:\\screens","ddfd",5000);
-                screenshoter = new Screenshoter(distPanel.getPath()
-                                               ,namePanel.getName()
-                                               ,repeatPanel.getInterval());
-//                new Thread(screenshoter).start();
-                enableGUI(false);
-                start.setEnabled(false);
-                stop.setEnabled(true);
+                if (validateValues()){
+                    screenshoter = new Screenshoter(distPanel.getPath()
+                            ,namePanel.getName()
+                            ,repeatPanel.getInterval());
+//                    new Thread(screenshoter).start();
+                    enableGUI(false);
+                    start.setEnabled(false);
+                    stop.setEnabled(true);
+                }
             }
         });
         add(start);
@@ -69,5 +71,25 @@ public class ControlPanel extends AbstractPanel {
             distPanel.setEnabled(enabled);
             namePanel.setEnabled(enabled);
             repeatPanel.setEnabled(enabled);
+    }
+
+    private boolean validateValues() {
+        if(distPanel.getPath().equals("")){
+            showDialog("Please choose the destintion folder!");
+            return false;
+        }
+        if(namePanel.getName().equals("")){
+            showDialog("Please choose the prefix for name!");
+            return false;
+        }
+        if(repeatPanel.getInterval() == 0){
+            showDialog("Please choose interval");
+            return false;
+        }
+        return true;
+    }
+
+    private void showDialog(String message) {
+        JOptionPane.showMessageDialog(null, message);
     }
 }

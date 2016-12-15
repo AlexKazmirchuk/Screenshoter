@@ -53,6 +53,9 @@ public class FileDistPanel extends AbstractPanel {
     }
 
     public String getPath(){
+        if (textField.getText().equals("")){
+            return "";
+        }
         try {
             String result = Paths.get(textField.getText()).toRealPath().toString();
             if(Files.isDirectory(Paths.get(result)) && !result.equals("")){
