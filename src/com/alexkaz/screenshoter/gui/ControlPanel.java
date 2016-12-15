@@ -30,12 +30,11 @@ public class ControlPanel extends AbstractPanel {
         start.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-//                screenshoter = new Screenshoter("D:\\screens","ddfd",5000);
                 if (validateValues()){
                     screenshoter = new Screenshoter(distPanel.getPath()
                             ,namePanel.getName()
                             ,repeatPanel.getInterval());
-//                    new Thread(screenshoter).start();
+                    new Thread(screenshoter).start();
                     enableGUI(false);
                     start.setEnabled(false);
                     stop.setEnabled(true);
@@ -79,7 +78,7 @@ public class ControlPanel extends AbstractPanel {
             return false;
         }
         if(namePanel.getName().equals("")){
-            showDialog("Please choose the prefix for name!");
+            showDialog("A filename cannot contain any of the following characters: \\ / : * ? \" < > | or be empty!");
             return false;
         }
         if(repeatPanel.getInterval() == 0){

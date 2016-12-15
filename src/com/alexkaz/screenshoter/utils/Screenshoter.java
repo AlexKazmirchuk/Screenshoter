@@ -6,6 +6,8 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Screenshoter implements Runnable {
     private String destFolder;
@@ -29,7 +31,8 @@ public class Screenshoter implements Runnable {
             try {
                 BufferedImage bufferedImage = grabScreen();
                 if (bufferedImage != null){
-                    ImageIO.write(bufferedImage,"png",new File(destFolder,namePrefix+count+".png"));
+//                    ImageIO.write(bufferedImage,"png",new File(destFolder,namePrefix+count+".png"));
+                    ImageIO.write(bufferedImage, "png", new File(destFolder,selectName() + ".png"));
                     count++;
                 }
                 Thread.sleep(delay);
@@ -41,12 +44,10 @@ public class Screenshoter implements Runnable {
 
     private String selectName(){
         if (namePrefix.equals("By date")){
-            //TODO naming by date
-
-            return "";
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH-mm");
+            return dateFormat.format(new Date());
         } else {
-            // TODO naming be prefix + count
-            return "";
+            return namePrefix+count;
         }
     }
 
