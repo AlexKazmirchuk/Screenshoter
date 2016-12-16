@@ -55,4 +55,12 @@ public class RepeatIntPanel extends AbstractPanel {
         int result = hours*1000*60*60 + minutes*1000*60;
         return result;
     }
+
+    public String getHours(){
+        return hours.getText();
+    }
+
+    public String getMinutes(){
+        return minutes.getText();
+    }
 }

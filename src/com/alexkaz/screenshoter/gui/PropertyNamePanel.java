@@ -95,4 +95,8 @@ public class PropertyNamePanel extends AbstractPanel {
         }
         return result;
     }
+
+    public String getPrefix(){
+        return textField.getText();
+    }
 }

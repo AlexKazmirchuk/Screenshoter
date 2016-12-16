@@ -1,5 +1,6 @@
 package com.alexkaz.screenshoter.gui;
 
+import com.alexkaz.screenshoter.utils.PropertyUtils;
 import com.alexkaz.screenshoter.utils.Screenshoter;
 
 import javax.swing.*;
@@ -85,7 +86,20 @@ public class ControlPanel extends AbstractPanel {
             showDialog("Please choose interval");
             return false;
         }
+
         return true;
+    }
+
+    private void saveProperties(){
+        PropertyUtils.update(PropertyUtils.path,distPanel.getPath());
+        if(namePanel.getName().equals("By date")){
+            PropertyUtils.update(PropertyUtils.checked,"true");
+        } else {
+            PropertyUtils.update(PropertyUtils.checked,"false");
+        }
+        PropertyUtils.update(PropertyUtils.prefixName,namePanel.getPrefix());
+        PropertyUtils.update(PropertyUtils.hours,repeatPanel.getHours());
+        PropertyUtils.update(PropertyUtils.minutes,repeatPanel.getMinutes());
     }
 
     private void showDialog(String message) {
