@@ -45,7 +45,7 @@ public class PropertyNamePanel extends AbstractPanel {
         orLabel.setEnabled(false);
         add(orLabel);
 
-        textField = new JTextField("screenshoot");
+        textField = new JTextField("");
         textField.setSize(210,20);
         textField.setLocation(130,30);
         textField.setEnabled(false);

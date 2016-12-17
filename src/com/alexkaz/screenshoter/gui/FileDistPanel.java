@@ -29,7 +29,7 @@ public class FileDistPanel extends AbstractPanel {
         folderIcon.setLocation(10,30);
         add(folderIcon);
 
-        textField = new JTextField("C:\\Users\\sasha\\Documents");
+        textField = new JTextField("");
         textField.setSize(230,20);
         textField.setLocation(40,30);
         add(textField);
