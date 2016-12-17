@@ -43,10 +43,10 @@ public class PropertyUtils {
     }
 
     public static void update(String key,String value){
+        Properties properties = new Properties();
+        setOldValues(properties);
+        properties.setProperty(key,value);
         try(FileOutputStream fos = new FileOutputStream(new File(getPath()))){
-            Properties properties = new Properties();
-            setDefaultValues(properties);
-            properties.setProperty(key,value);
             properties.store(fos,null);
         } catch (IOException e) {
             e.printStackTrace();
@@ -70,5 +70,20 @@ public class PropertyUtils {
         p.setProperty(hours,"0");
         p.setProperty(minutes,"0");
         p.setProperty(count,"0");
+    }
+
+    private static void setOldValues(Properties p){
+        try(FileInputStream fis = new FileInputStream(new File(getPath()))) {
+            Properties old = new Properties();
+            old.load(fis);
+            p.setProperty(path,old.getProperty(path));
+            p.setProperty(checked,old.getProperty(checked));
+            p.setProperty(prefixName,old.getProperty(prefixName));
+            p.setProperty(hours,old.getProperty(hours));
+            p.setProperty(minutes,old.getProperty(minutes));
+            p.setProperty(count,old.getProperty(count));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
