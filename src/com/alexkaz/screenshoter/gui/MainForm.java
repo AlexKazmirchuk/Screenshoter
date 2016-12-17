@@ -1,5 +1,7 @@
 package com.alexkaz.screenshoter.gui;
 
+import com.alexkaz.screenshoter.utils.PropertyUtils;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -20,6 +22,12 @@ public class MainForm extends JFrame {
         RepeatIntPanel intPanel = new RepeatIntPanel(2,"3. Make screenshot every:");
         ControlPanel controlPanel = new ControlPanel(3,"4. Launch or stop:");
         controlPanel.setControlComps(distPanel,namePanel,intPanel);
+
+        distPanel.setPath(PropertyUtils.load(PropertyUtils.path));
+        namePanel.selectCheckbox(new Boolean(PropertyUtils.load(PropertyUtils.checked)));
+        namePanel.setPrefix(PropertyUtils.load(PropertyUtils.prefixName));
+        intPanel.setHours(PropertyUtils.load(PropertyUtils.hours));
+        intPanel.setMinutes(PropertyUtils.load(PropertyUtils.minutes));
 
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(null);

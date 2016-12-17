@@ -62,7 +62,15 @@ public class PropertyNamePanel extends AbstractPanel {
     @Override
     public void setEnabled(boolean enabled) {
         super.setEnabled(enabled);
-        switchComponents();
+        if (enabled){
+            switchComponents();
+        } else {
+            byDateL.setEnabled(false);
+            checkBox.setEnabled(false);
+            orLabel.setEnabled(false);
+            textField.setEnabled(false);
+            fileExtLabel.setEnabled(false);
+        }
     }
 
     private void switchComponents(){
@@ -98,5 +106,14 @@ public class PropertyNamePanel extends AbstractPanel {
 
     public String getPrefix(){
         return textField.getText();
+    }
+
+    public void setPrefix(String prefix){
+        textField.setText(prefix);
+    }
+
+    public void selectCheckbox(boolean selected){
+        checkBox.setSelected(selected);
+        switchComponents();
     }
 }

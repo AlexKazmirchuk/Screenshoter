@@ -32,6 +32,7 @@ public class ControlPanel extends AbstractPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (validateValues()){
+                    saveProperties();
                     screenshoter = new Screenshoter(distPanel.getPath()
                             ,namePanel.getName()
                             ,repeatPanel.getInterval());
@@ -86,7 +87,6 @@ public class ControlPanel extends AbstractPanel {
             showDialog("Please choose interval");
             return false;
         }
-
         return true;
     }
 

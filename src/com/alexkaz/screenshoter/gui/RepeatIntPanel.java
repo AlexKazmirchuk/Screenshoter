@@ -22,7 +22,7 @@ public class RepeatIntPanel extends AbstractPanel {
     }
 
     protected void initComps() {
-        hours = new JTextField("0");
+        hours = new JTextField("");
         hours.setHorizontalAlignment(SwingConstants.CENTER);
         ((AbstractDocument) hours.getDocument()).setDocumentFilter(new NumericAndLengthFilter(2));
         hours.setSize(30,20);
@@ -35,7 +35,7 @@ public class RepeatIntPanel extends AbstractPanel {
         hrsLabel.setLocation(155,30);
         add(hrsLabel);
 
-        minutes = new JTextField("0");
+        minutes = new JTextField("");
         minutes.setHorizontalAlignment(SwingConstants.CENTER);
         ((AbstractDocument) minutes.getDocument()).setDocumentFilter(new NumericAndLengthFilter(2));
         minutes.setSize(30,20);
@@ -62,5 +62,13 @@ public class RepeatIntPanel extends AbstractPanel {
 
     public String getMinutes(){
         return minutes.getText();
+    }
+
+    public void setHours(String value){
+        hours.setText(value);
+    }
+
+    public void setMinutes(String value){
+        minutes.setText(value);
     }
 }

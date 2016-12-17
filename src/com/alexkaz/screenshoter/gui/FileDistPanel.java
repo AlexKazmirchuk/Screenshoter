@@ -69,4 +69,8 @@ public class FileDistPanel extends AbstractPanel {
             return "";
         }
     }
+
+    public void setPath(String path){
+        textField.setText(path);
+    }
 }
