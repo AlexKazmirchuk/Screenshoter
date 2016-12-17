@@ -23,6 +23,7 @@ public class Screenshoter implements Runnable {
         System.out.println("path " + destFolder);
         System.out.println("prefix " + namePrefix);
         System.out.println("delay " + delay);
+        count = Integer.parseInt(PropertyUtils.load(PropertyUtils.count));
     }
 
     @Override
@@ -34,6 +35,7 @@ public class Screenshoter implements Runnable {
 //                    ImageIO.write(bufferedImage,"png",new File(destFolder,namePrefix+count+".png"));
                     ImageIO.write(bufferedImage, "png", new File(destFolder,selectName() + ".png"));
                     count++;
+                    PropertyUtils.update(PropertyUtils.count,count+"");
                 }
                 Thread.sleep(delay);
             } catch (IOException | InterruptedException e) {
