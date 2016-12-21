@@ -8,7 +8,7 @@ public class MainForm extends JFrame {
 
     public MainForm(){
         super("Screenshoter v1.0");
-        setSize(460,360);
+        setSize(450,275);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         addPanels();

@@ -30,17 +30,17 @@ public class FileDistPanel extends AbstractPanel {
         folderIcon = new JLabel("");
         folderIcon.setIcon(icon);
         folderIcon.setSize(30,25);
-        folderIcon.setLocation(10,27);
+        folderIcon.setLocation(10,20);
         add(folderIcon);
 
         textField = new JTextField("");
         textField.setSize(230,20);
-        textField.setLocation(40,30);
+        textField.setLocation(40,23);
         add(textField);
 
         button = new JButton("Change directory");
         button.setSize(140,20);
-        button.setLocation(280,30);
+        button.setLocation(280,23);
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

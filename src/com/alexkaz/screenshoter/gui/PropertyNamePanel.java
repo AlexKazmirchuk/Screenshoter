@@ -20,35 +20,32 @@ public class PropertyNamePanel extends AbstractPanel {
 
     protected void initComps() {
         byDateL = new JLabel("By date:");
-        byDateL.setBorder(BorderFactory.createLineBorder(Color.black));
         byDateL.setSize(50,20);
-        byDateL.setLocation(10,30);
+        byDateL.setLocation(10,23);
         add(byDateL);
 
         checkBox = new JCheckBox();
         checkBox.setSize(20,20);
-        checkBox.setLocation(70,30);
+        checkBox.setLocation(70,23);
         checkBox.setSelected(true);
         checkBox.addActionListener(e -> switchComponents());
         add(checkBox);
 
         orLabel = new JLabel("or");
-        orLabel.setBorder(BorderFactory.createLineBorder(Color.black));
         orLabel.setSize(20,20);
-        orLabel.setLocation(100,30);
+        orLabel.setLocation(100,23);
         orLabel.setEnabled(false);
         add(orLabel);
 
         textField = new JTextField("");
         textField.setSize(210,20);
-        textField.setLocation(130,30);
+        textField.setLocation(130,23);
         textField.setEnabled(false);
         add(textField);
 
         fileExtLabel = new JLabel("(count).jpg");
-        fileExtLabel.setBorder(BorderFactory.createLineBorder(Color.black));
         fileExtLabel.setSize(70,20);
-        fileExtLabel.setLocation(350,30);
+        fileExtLabel.setLocation(350,23);
         fileExtLabel.setEnabled(false);
         add(fileExtLabel);
     }

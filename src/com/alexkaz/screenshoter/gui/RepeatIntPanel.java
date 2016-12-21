@@ -21,26 +21,24 @@ public class RepeatIntPanel extends AbstractPanel {
         hours.setHorizontalAlignment(SwingConstants.CENTER);
         ((AbstractDocument) hours.getDocument()).setDocumentFilter(new NumericAndLengthFilter(2));
         hours.setSize(30,20);
-        hours.setLocation(120,30);
+        hours.setLocation(120,23);
         add(hours);
 
         hrsLabel = new JLabel("hours");
-        hrsLabel.setBorder(BorderFactory.createLineBorder(Color.black));
         hrsLabel.setSize(40,20);
-        hrsLabel.setLocation(155,30);
+        hrsLabel.setLocation(155,23);
         add(hrsLabel);
 
         minutes = new JTextField("");
         minutes.setHorizontalAlignment(SwingConstants.CENTER);
         ((AbstractDocument) minutes.getDocument()).setDocumentFilter(new NumericAndLengthFilter(2));
         minutes.setSize(30,20);
-        minutes.setLocation(200,30);
+        minutes.setLocation(200,23);
         add(minutes);
 
         minLabel = new JLabel("minutes");
-        minLabel.setBorder(BorderFactory.createLineBorder(Color.black));
         minLabel.setSize(50,20);
-        minLabel.setLocation(235,30);
+        minLabel.setLocation(235,23);
         add(minLabel);
     }
 
