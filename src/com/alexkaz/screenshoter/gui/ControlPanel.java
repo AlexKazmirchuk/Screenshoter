@@ -90,7 +90,7 @@ public class ControlPanel extends AbstractPanel {
         return true;
     }
 
-    private void saveProperties(){
+    public void saveProperties(){
         PropertyUtils.update(PropertyUtils.path,distPanel.getPath());
         if(namePanel.getName().equals("By date")){
             PropertyUtils.update(PropertyUtils.checked,"true");

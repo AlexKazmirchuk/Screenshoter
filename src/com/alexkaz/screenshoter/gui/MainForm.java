@@ -3,6 +3,8 @@ package com.alexkaz.screenshoter.gui;
 import com.alexkaz.screenshoter.utils.PropertyUtils;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class MainForm extends JFrame {
 
@@ -36,5 +38,12 @@ public class MainForm extends JFrame {
         mainPanel.add(controlPanel);
         mainPanel.setBackground(Color.GRAY);
         setContentPane(mainPanel);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                controlPanel.saveProperties();
+                super.windowClosing(e);
+            }
+        });
     }
 }
