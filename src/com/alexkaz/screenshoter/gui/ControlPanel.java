@@ -76,7 +76,7 @@ public class ControlPanel extends AbstractPanel {
 
     private boolean validateValues() {
         if(distPanel.getPath().equals("")){
-            showDialog("Please choose the destintion folder!");
+            showDialog("Please choose the correct destination path !");
             return false;
         }
         if(namePanel.getName().equals("")){

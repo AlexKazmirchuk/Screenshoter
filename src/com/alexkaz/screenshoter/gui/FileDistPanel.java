@@ -1,5 +1,7 @@
 package com.alexkaz.screenshoter.gui;
 
+import com.alexkaz.screenshoter.Main;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
@@ -8,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
@@ -23,10 +26,11 @@ public class FileDistPanel extends AbstractPanel {
     }
 
     protected void initComps() {
-        folderIcon = new JLabel("||");
-        folderIcon.setBorder(BorderFactory.createLineBorder(Color.black));
-        folderIcon.setSize(20,20);
-        folderIcon.setLocation(10,30);
+        ImageIcon icon = new ImageIcon(Main.class.getResource("icon.png"));
+        folderIcon = new JLabel("");
+        folderIcon.setIcon(icon);
+        folderIcon.setSize(30,25);
+        folderIcon.setLocation(10,27);
         add(folderIcon);
 
         textField = new JTextField("");
