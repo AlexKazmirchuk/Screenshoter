@@ -32,10 +32,7 @@ public class Screenshoter implements Runnable {
             try {
                 BufferedImage bufferedImage = grabScreen();
                 if (bufferedImage != null){
-//                    ImageIO.write(bufferedImage,"png",new File(destFolder,namePrefix+count+".png"));
                     ImageIO.write(bufferedImage, "png", new File(destFolder,selectName() + ".png"));
-                    count++;
-                    PropertyUtils.update(PropertyUtils.count,count+"");
                 }
                 Thread.sleep(delay);
             } catch (IOException | InterruptedException e) {
@@ -49,7 +46,10 @@ public class Screenshoter implements Runnable {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH-mm");
             return dateFormat.format(new Date());
         } else {
-            return namePrefix+count;
+            String result = namePrefix + count;
+            count++;
+            PropertyUtils.update(PropertyUtils.count,count+"");
+            return result;
         }
     }
 
