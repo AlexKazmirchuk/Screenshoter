@@ -3,13 +3,8 @@ package com.alexkaz.screenshoter.gui;
 import com.alexkaz.screenshoter.utils.NumericAndLengthFilter;
 
 import javax.swing.*;
-import javax.swing.border.Border;
-import javax.swing.border.TitledBorder;
 import javax.swing.text.AbstractDocument;
-import javax.swing.text.NumberFormatter;
 import java.awt.*;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 
 public class RepeatIntPanel extends AbstractPanel {
     private JTextField hours;
@@ -52,8 +47,7 @@ public class RepeatIntPanel extends AbstractPanel {
     public int getInterval(){
         int hours = (!this.hours.getText().equals(""))  ?  Integer.parseInt(this.hours.getText())  :  0;
         int minutes = (!this.minutes.getText().equals(""))  ?  Integer.parseInt(this.minutes.getText())  :  0;
-        int result = hours*1000*60*60 + minutes*1000*60;
-        return result;
+        return (hours * 1000 * 60 * 60) + (minutes * 1000 * 60);
     }
 
     public String getHours(){

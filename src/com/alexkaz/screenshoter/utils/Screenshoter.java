@@ -1,7 +1,6 @@
 package com.alexkaz.screenshoter.utils;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -20,9 +19,6 @@ public class Screenshoter implements Runnable {
         this.destFolder = destFolder;
         this.namePrefix = namePrefix;
         this.delay = delay;
-        System.out.println("path " + destFolder);
-        System.out.println("prefix " + namePrefix);
-        System.out.println("delay " + delay);
         count = Integer.parseInt(PropertyUtils.load(PropertyUtils.count));
     }
 
@@ -37,6 +33,7 @@ public class Screenshoter implements Runnable {
                 Thread.sleep(delay);
             } catch (IOException | InterruptedException e) {
                 e.printStackTrace();
+                System.out.println("Image cannot be saved !");
             }
         }
     }
@@ -58,6 +55,7 @@ public class Screenshoter implements Runnable {
             return new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
         } catch (SecurityException | AWTException e) {
             e.printStackTrace();
+            System.out.println("Screen cannot be grabbed !");
         }
         return null;
     }

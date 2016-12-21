@@ -19,7 +19,6 @@ public class PropertyNamePanel extends AbstractPanel {
     }
 
     protected void initComps() {
-
         byDateL = new JLabel("By date:");
         byDateL.setBorder(BorderFactory.createLineBorder(Color.black));
         byDateL.setSize(50,20);
@@ -30,12 +29,7 @@ public class PropertyNamePanel extends AbstractPanel {
         checkBox.setSize(20,20);
         checkBox.setLocation(70,30);
         checkBox.setSelected(true);
-        checkBox.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                switchComponents();
-            }
-        });
+        checkBox.addActionListener(e -> switchComponents());
         add(checkBox);
 
         orLabel = new JLabel("or");

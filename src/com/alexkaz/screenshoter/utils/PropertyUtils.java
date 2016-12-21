@@ -19,14 +19,14 @@ public class PropertyUtils {
         try {
             new File(myDocuments+"\\config.prop").createNewFile();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Property file has not created");
         }
         Properties properties = new Properties();
         setDefaultValues(properties);
         try(FileOutputStream fos = new FileOutputStream(myDocuments+"\\config.prop")) {
             properties.store(fos,null);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Property file has not written");
         }
     }
 
@@ -37,7 +37,7 @@ public class PropertyUtils {
             properties.load(fis);
             result = properties.getProperty(key);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Property file has not loaded");
         }
         return result;
     }
@@ -49,7 +49,7 @@ public class PropertyUtils {
         try(FileOutputStream fos = new FileOutputStream(new File(getPath()))){
             properties.store(fos,null);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Property file has not saved");
         }
     }
 
@@ -84,6 +84,7 @@ public class PropertyUtils {
             p.setProperty(count,old.getProperty(count));
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("Property file has not loaded2");
         }
     }
 }

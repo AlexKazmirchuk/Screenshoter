@@ -64,8 +64,10 @@ public class FileDistPanel extends AbstractPanel {
                 return "";
             }
         } catch (InvalidPathException e){
+            System.out.println("Path is invalid");
             return "";
         } catch (IOException e) {
+            System.out.println("IO exception in FileDistPanel");
             return "";
         }
     }

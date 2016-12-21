@@ -1,7 +1,6 @@
 package com.alexkaz.screenshoter.gui;
 
 import com.alexkaz.screenshoter.utils.PropertyUtils;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -24,7 +23,7 @@ public class MainForm extends JFrame {
         controlPanel.setControlComps(distPanel,namePanel,intPanel);
 
         distPanel.setPath(PropertyUtils.load(PropertyUtils.path));
-        namePanel.selectCheckbox(new Boolean(PropertyUtils.load(PropertyUtils.checked)));
+        namePanel.selectCheckbox(Boolean.valueOf(PropertyUtils.load(PropertyUtils.checked)));
         namePanel.setPrefix(PropertyUtils.load(PropertyUtils.prefixName));
         intPanel.setHours(PropertyUtils.load(PropertyUtils.hours));
         intPanel.setMinutes(PropertyUtils.load(PropertyUtils.minutes));
